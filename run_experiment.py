@@ -155,7 +155,7 @@ def setup_exp_run(args, exp, algo, dfile, pfile, bname, domain, problem):
 
     ### A HACK for Tarski unbound tmp file issue - to be removed
     if isfile(CLR_TMP_PATH) :
-        run.add_command('clear_tmp',[abspath(CLR_TMP_PATH),],
+        run.add_command('clear_tmp',['sh', abspath(CLR_TMP_PATH),],
             time_limit=args.TIME_LIMIT, memory_limit=args.MEMORY_LIMIT)
     ### A HACK - to be removed
 
