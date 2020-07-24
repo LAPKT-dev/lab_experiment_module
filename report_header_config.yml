@@ -50,6 +50,20 @@ AT_BFS_f_Planner:
   - lab_exit_code
   - is_plan_valid
 
+BFWS:
+  - num_actions
+  - num_fluents
+  - solver_exit_code
+  - plan_cost
+  - runtime_parser
+  - runtime_solver
+  - runtime_total
+  - time_limit
+  - run_dir
+  - validate_exit_code
+  - lab_exit_code
+  - is_plan_valid
+
 BFS_f_Planner:
   - num_actions
   - num_fluents
