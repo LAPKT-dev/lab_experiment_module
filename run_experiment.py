@@ -131,7 +131,13 @@ def setup_exp_run(args, exp, algo, dfile, pfile, bname, domain, problem):
     if re.match( r'fast-downward\d*\.py' , basename(solver[0])) :
         solver.extend(['--plan_file', args.PLAN_FILE,abspath(dfile), abspath(pfile)])
     else :
-        solver.extend(['--domain', abspath(dfile),
+        if config.get('PARSER',{}).get(domain, None) :
+            solver.extend(['--domain', abspath(dfile),
+                    '--problem', abspath(pfile),
+                    '--plan_file', args.PLAN_FILE,
+                    '--lapkt_instance_generator', config['PARSER'][domain]])
+        else :
+            solver.extend(['--domain', abspath(dfile),
                     '--problem', abspath(pfile),
                     '--plan_file',args.PLAN_FILE])
     #print(solver)
@@ -164,7 +170,7 @@ with open(Path(args.PLIST_YML),'r') as pfile :
 
 for algo in args.SOLVERS :
     for domain, b_dict in problem_list.items() :
-        if args.DNAME and not any([re.search(d, domain) for d in args.DNAME]) : continue
+        if args.DNAME and not any([d==domain for d in args.DNAME]) : continue
         for bname, plist in b_dict.items() :
             if args.BNAME and not any([b in bname for b in args.BNAME]) : continue
             for pname, p in plist.items() :
