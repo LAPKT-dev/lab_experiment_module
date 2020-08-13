@@ -2,6 +2,7 @@ import os
 import copy
 import re
 import argparse
+from collections import OrderedDict
 from ruamel.yaml import YAML
 import api_tools.planning_domains_api as api
 
@@ -129,23 +130,38 @@ def generate_problemlist_api_on(args) :
         prob = {}
         bname  =   ",".join( [api.get_collection(x)['collection_name']
                                 for x in domain_col_map[p['domain_id']]])
-        prob['dfile']  =   re.sub(abspath(args.REPO_PATH)+'/','', abspath(p['domain_path']))
+        prob['domain_url']  =   p['domain_url']
+        prob['domain_file'] =   re.sub(abspath(args.REPO_PATH)+'/','', abspath(p['domain_path']))
+        prob['problem_url'] =   p['problem_url']
 
         print( p['problem_path'])
         if (args.ATOMIC) :
             pfiles_atomic = split_atomic_goals(p['problem_path'],
                 p['domain'], str(p['domain_id']), p['problem'])
             for p_path in pfiles_atomic :
-                prob['pfile'] = re.sub(abspath(args.REPO_PATH)+'/', '', abspath(p_path))
-                prob['problem'] = ".".join(basename(prob['pfile']).split('.')[:-1])
+                prob['problem_file'] = re.sub(abspath(args.REPO_PATH)+'/', '', abspath(p_path))
+                prob['problem'] = ".".join(basename(prob['problem)file']).split('.')[:-1])
                 #problem_list.append(copy.deepcopy(prob))
-                problem_list.setdefault(bname,{}).setdefault(p['domain'],[]).append(copy.deepcopy(prob))
+                #problem_list.setdefault(bname,{}).setdefault(p['domain'],
+                    #[]).append(copy.deepcopy(prob))
         else :
-            prob['pfile'] = re.sub(abspath(args.REPO_PATH)+'/', '', abspath(p['problem_path']))
-            prob['problem'] = ".".join(basename(prob['pfile']).split('.')[:-1])
+            prob['problem_file'] = re.sub(abspath(args.REPO_PATH)+'/', '', abspath(p['problem_path']))
+            pname_tmp = ".".join(basename(prob['problem_file']).split('.')[:-1])
             #problem_list.append(copy.deepcopy(prob))
-            problem_list.setdefault(bname,{}).setdefault(p['domain'],[]).append(copy.deepcopy(prob))
-    return problem_list
+        prob['tag'] = "null"
+        problem_list.setdefault(basename(dirname(prob['problem_file'])),
+                    {}).setdefault(tuple(bname.split(',')),{})[pname_tmp] = copy.deepcopy(prob)
+    for d, b in problem_list.items() :
+        for bname, plist in b.items() :
+            new_plist = {}
+            for pname in sorted(plist.keys()):
+                new_plist[pname] = plist[pname]
+            b[bname] = new_plist
+    new_problem_list = {}
+    for d in sorted(problem_list.keys()) :
+        new_problem_list[d] = problem_list[d]
+
+    return new_problem_list
 
 def split_atomic_goals(pfile, domain, domain_id, prob) :
     """
@@ -222,4 +238,5 @@ if __name__=="__main__" :
         #problemt_list = generate_problemlist_api_off( args)
 
     with open(args.OUTFILE, 'w') as outfile :
-        YAML(typ='safe').dump(problem_list, outfile)
+        #YAML(typ='safe').dump(problem_list, outfile)
+        YAML().dump(problem_list, outfile)

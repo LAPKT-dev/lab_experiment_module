@@ -170,9 +170,10 @@ with open(Path(args.PLIST_YML),'r') as pfile :
 
 for algo in args.SOLVERS :
     for domain, b_dict in problem_list.items() :
-        if args.DNAME and not any([d==domain for d in args.DNAME]) : continue
+        if args.DNAME and not any([d==domain for d in args.DNAME.keys()]) : continue
         for bname, plist in b_dict.items() :
             if args.BNAME and not any([b in bname for b in args.BNAME]) : continue
+            bname = args.DNAME[domain]
             for pname, p in plist.items() :
                 if args.PNAME and not any([re.match(p, pname) for p in args.PNAME]) : continue
                 if args.TAGS and p['tag'] \
