@@ -22,7 +22,7 @@
 	p130-e2f5p1-dp12 - simple
 	p130-e2f4p1-dp12 - simple
 	p130 - simple
-	max - simple
+	max1 - simple
 	m1433 - simple
 	jun - simple
 	hdac1-prbp1-e2f4-dp12 - simple
@@ -181,7 +181,7 @@
 	(not-chosen p130-e2f5p1-dp12)
 	(not-chosen p130-e2f4p1-dp12)
 	(not-chosen p130)
-	(not-chosen max)
+	(not-chosen max1)
 	(not-chosen m1433)
 	(not-chosen jun)
 	(not-chosen hdac1-prbp1-e2f4-dp12)
@@ -228,7 +228,7 @@
 	(possible p130-e2f5p1-dp12)
 	(possible p130-e2f4p1-dp12)
 	(possible p130)
-	(possible max)
+	(possible max1)
 	(possible m1433)
 	(possible jun)
 	(possible hdac1-prbp1-e2f4-dp12)
@@ -272,7 +272,7 @@
 	(association-reaction cdk46p1 cycd cdk46p1-cycd)
 	(association-reaction cdk46p1 cycdp1 cdk46p1-cycdp1)
 	(association-reaction c-myc ap2 c-myc-ap2)
-	(association-reaction c-myc max c-myc-max)
+	(association-reaction c-myc max1 c-myc-max)
 	(synthesis-reaction e2f13-dp12-ge2 c-myc) 
 	(synthesis-reaction e2f13-dp12-ge2 cyca) 
 	(synthesis-reaction e2f13-dp12-ge2 cycd) 

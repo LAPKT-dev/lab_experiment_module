@@ -24,7 +24,7 @@
 	p130-e2f5p1-dp12 - simple
 	p130-e2f4p1-dp12 - simple
 	p130 - simple
-	max - simple
+	max1 - simple
 	hdac1-prbp1-e2f4-dp12 - simple
 	hdac1-prbp1-e2f13p1-dp12 - simple
 	hdac1-prbp1-e2f13-dp12 - simple
@@ -384,7 +384,7 @@
 	(not-chosen p130-e2f5p1-dp12)
 	(not-chosen p130-e2f4p1-dp12)
 	(not-chosen p130)
-	(not-chosen max)
+	(not-chosen max1)
 	(not-chosen hdac1-prbp1-e2f4-dp12)
 	(not-chosen hdac1-prbp1-e2f13p1-dp12)
 	(not-chosen hdac1-prbp1-e2f13-dp12)
@@ -438,7 +438,7 @@
 	(possible p130-e2f5p1-dp12)
 	(possible p130-e2f4p1-dp12)
 	(possible p130)
-	(possible max)
+	(possible max1)
 	(possible hdac1-prbp1-e2f4-dp12)
 	(possible hdac1-prbp1-e2f13p1-dp12)
 	(possible hdac1-prbp1-e2f13-dp12)
@@ -529,7 +529,7 @@
 	(association-reaction cebp prbp1 cebp-prbp1)
 	(association-reaction cebp prbp1p2 cebp-prbp1p2)
 	(association-reaction cebp prbp2 cebp-prbp2)
-	(association-reaction c-myc max c-myc-max)
+	(association-reaction c-myc max1 c-myc-max)
 	(catalyzed-association-reaction cycb apcp1 apcp1)
 	(catalyzed-association-reaction cyce cdk2p2-cyce cycep1)
 	(catalyzed-association-reaction cyce cdk2p2-cycep1 cycep1)

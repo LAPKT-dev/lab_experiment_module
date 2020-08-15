@@ -19,7 +19,7 @@
 	p53 - simple
 	p27 - simple
 	p130 - simple
-	max - simple
+	max1 - simple
 	gp - simple
 	ge-c - simple
 	gcdc25a - simple
@@ -262,7 +262,7 @@
 	(not-chosen p53)
 	(not-chosen p27)
 	(not-chosen p130)
-	(not-chosen max)
+	(not-chosen max1)
 	(not-chosen gp)
 	(not-chosen ge-c)
 	(not-chosen gcdc25a)
@@ -300,7 +300,7 @@
 	(possible p53)
 	(possible p27)
 	(possible p130)
-	(possible max)
+	(possible max1)
 	(possible gp)
 	(possible ge-c)
 	(possible gcdc25a)
@@ -446,7 +446,7 @@
 	(association-reaction cebp-prbp1p2 gp cebp-prbp1p2-gp)
 	(synthesis-reaction cebp-prbp1p2-gp p) 
 	(association-reaction c-myc ap2 c-myc-ap2)
-	(association-reaction c-myc max c-myc-max)
+	(association-reaction c-myc max1 c-myc-max)
 	(synthesis-reaction c-myc-max-gcdc25a cdc25a) 
 	(association-reaction c-myc-max gcdc25a c-myc-max-gcdc25a)
 	(catalyzed-association-reaction cyca skp2p1-skp1 skp2p1-skp1)

@@ -17,7 +17,7 @@
 	p53p1 - simple
 	p53 - simple
 	p27 - simple
-	max - simple
+	max1 - simple
 	m1433 - simple
 	jun - simple
 	hdac1-prbp1-e2f13p1-dp12 - simple
@@ -236,7 +236,7 @@
 	(not-chosen p53p1)
 	(not-chosen p53)
 	(not-chosen p27)
-	(not-chosen max)
+	(not-chosen max1)
 	(not-chosen m1433)
 	(not-chosen jun)
 	(not-chosen hdac1-prbp1-e2f13p1-dp12)
@@ -279,7 +279,7 @@
 	(possible p53p1)
 	(possible p53)
 	(possible p27)
-	(possible max)
+	(possible max1)
 	(possible m1433)
 	(possible jun)
 	(possible hdac1-prbp1-e2f13p1-dp12)
@@ -410,7 +410,7 @@
 	(catalyzed-association-reaction cdk7-cych cdk7-cych cdk7p1-cych)
 	(association-reaction cdk7p1 cych cdk7p1-cych)
 	(association-reaction c-myc ap2 c-myc-ap2)
-	(association-reaction c-myc max c-myc-max)
+	(association-reaction c-myc max1 c-myc-max)
 	(catalyzed-association-reaction cycb apcp1 apcp1)
 	(catalyzed-association-reaction dmp1 cdk46p3-cycdp1 dmp1p1)
 	(association-reaction dmp1 cycd dmp1-cycd)

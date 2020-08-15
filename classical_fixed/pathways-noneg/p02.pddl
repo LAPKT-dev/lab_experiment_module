@@ -8,7 +8,7 @@
 (:objects
 	p53p1 - simple
 	p130 - simple
-	max - simple
+	max1 - simple
 	hdac1-prbp1-e2f4-dp12 - simple
 	hdac1-prbp1-e2f13-dp12 - simple
 	hdac1-p130-e2f4p1-dp12 - simple
@@ -54,7 +54,7 @@
 (:init
 	(not-chosen p53p1)
 	(not-chosen p130)
-	(not-chosen max)
+	(not-chosen max1)
 	(not-chosen hdac1-prbp1-e2f4-dp12)
 	(not-chosen hdac1-prbp1-e2f13-dp12)
 	(not-chosen hdac1-p130-e2f4p1-dp12)
@@ -66,7 +66,7 @@
 	(not-chosen cdk1p1p2)
 	(possible p53p1)
 	(possible p130)
-	(possible max)
+	(possible max1)
 	(possible hdac1-prbp1-e2f4-dp12)
 	(possible hdac1-prbp1-e2f13-dp12)
 	(possible hdac1-p130-e2f4p1-dp12)
@@ -77,7 +77,7 @@
 	(possible e2f13p1-dp12)
 	(possible cdk1p1p2)
 	(association-reaction cdk1p1p2 gadd45 cdk1p1p2-gadd45)
-	(association-reaction c-myc max c-myc-max)
+	(association-reaction c-myc max1 c-myc-max)
 	(synthesis-reaction e2f13p1-dp12-ge2 c-myc) 
 	(synthesis-reaction e2f13p1-dp12-ge2 cyca) 
 	(synthesis-reaction e2f13p1-dp12-ge2 cycd) 

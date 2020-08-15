@@ -19,7 +19,7 @@
 	p53 - simple
 	p27 - simple
 	p130 - simple
-	max - simple
+	max1 - simple
 	m1433 - simple
 	jun - simple
 	hdac1-prbp1-e2f4-dp12 - simple
@@ -192,7 +192,7 @@
 	(not-chosen p53)
 	(not-chosen p27)
 	(not-chosen p130)
-	(not-chosen max)
+	(not-chosen max1)
 	(not-chosen m1433)
 	(not-chosen jun)
 	(not-chosen hdac1-prbp1-e2f4-dp12)
@@ -232,7 +232,7 @@
 	(possible p53)
 	(possible p27)
 	(possible p130)
-	(possible max)
+	(possible max1)
 	(possible m1433)
 	(possible jun)
 	(possible hdac1-prbp1-e2f4-dp12)
@@ -276,7 +276,7 @@
 	(association-reaction cdk2p1 cycep1 cdk2p1-cycep1)
 	(association-reaction cdk46p1 cycd cdk46p1-cycd)
 	(association-reaction cdk46p1 cycdp1 cdk46p1-cycdp1)
-	(association-reaction c-myc max c-myc-max)
+	(association-reaction c-myc max1 c-myc-max)
 	(synthesis-reaction c-myc-max-gcdc25a cdc25a) 
 	(association-reaction c-myc-max gcdc25a c-myc-max-gcdc25a)
 	(catalyzed-association-reaction cyca skp2-skp1 skp2-skp1)
