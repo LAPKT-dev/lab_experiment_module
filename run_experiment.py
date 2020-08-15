@@ -130,6 +130,11 @@ def setup_exp_run(args, exp, algo, dfile, pfile, bname, domain, problem):
     solver[0]   =   abspath(solver[0])
     if re.match( r'fast-downward\d*\.py' , basename(solver[0])) :
         solver.extend(['--plan_file', args.PLAN_FILE,abspath(dfile), abspath(pfile)])
+    elif (re.match( r'bfws.py' , basename(solver[0])) or
+            re.match( r'bfws_ste.py' , basename(solver[0]))) :
+        solver.extend(['--domain', abspath(dfile),
+                '--problem', abspath(pfile),
+                '--plan_file',args.PLAN_FILE])
     else :
         if config.get('PARSER',{}).get(domain, None) :
             solver.extend(['--domain', abspath(dfile),
