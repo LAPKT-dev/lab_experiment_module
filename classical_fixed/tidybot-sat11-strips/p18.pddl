@@ -4,7 +4,7 @@
   
   (:objects 
    pr2 - robot 
-   cart - cart 
+   cart1 - cart 
    object0 - object 
    object1 - object 
    object2 - object 
@@ -161,8 +161,8 @@
    (surface x7 y4)
    (surface x7 y5)
    
-   (cart-pos cart x0 y1)
-   (not-pushed cart)
+   (cart-pos cart1 x0 y1)
+   (not-pushed cart1)
    (base-obstacle x0 y1)
    
    (object-pos object0 x1 y2)
