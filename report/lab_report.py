@@ -106,7 +106,7 @@ class CactusPlotReport(PlanningReport) :
                 continue
             numover_x[fill(algo, 20)] = {}
             counter[fill(algo, 20)] = {}
-            if self.attribute=='runtime' :
+            if self.attribute=='runtime_solver' :
                 for i in range ( self.time_limit * 10 ) :
                     numover_x[fill(algo, 20)][round(float(i)*0.1, 1)] = 0
             elif self.attribute=='memory':
@@ -122,8 +122,8 @@ class CactusPlotReport(PlanningReport) :
                     continue
                 if run['coverage'] and run[self.attribute]==None :
                     run[self.attribute] = 0
-                if self.attribute=='runtime' and run['coverage'] :
-                    t = round(float(run['runtime']), 1)
+                if self.attribute=='runtime_solver' and run['coverage'] :
+                    t = round(float(run['runtime_solver']), 1)
                     numover_x[fill(run['algorithm'], 20)][t] += 1
                 elif run['coverage'] and self.attribute=='memory' :
                     t = round(float(run['memory']), 0)
@@ -133,7 +133,7 @@ class CactusPlotReport(PlanningReport) :
                     numover_x[fill(run['algorithm'], 20)][t] += 1
 
         for k in numover_x.keys() :
-            if self.attribute=='runtime' :
+            if self.attribute=='runtime_solver' :
                 for t in [ round(x*0.1,1) for x in range(self.time_limit*10-1)] :
                     numover_x[k][round(t+0.1,1)] += numover_x[k][t]
             elif self.attribute=='memory' :
@@ -146,7 +146,7 @@ class CactusPlotReport(PlanningReport) :
         for category, cum_x in  numover_x.items() :
             for x, t in cum_x.items() :
                 if t :
-                    if self.attribute=='runtime':
+                    if self.attribute=='runtime_solver':
                         categories[category].append( (x+0.1, t))
                     else :
                         categories[category].append( (x+1, t))
