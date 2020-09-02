@@ -153,6 +153,13 @@ def fetch_props(content, props):
         props['novelty_'+str(i)+'_exp_count']    =   int(x.group(1)) if x and \
                                     not math.isnan(int(x.group(1))) else 0
 
+    for i in range(1,4) :
+        for j in range(1,4) :
+            x   =   re.search(r'Novelty '+str(i)+' with approx novelty '+str(j)+': (\d+)', content)
+            props['novelty_'+str(i)+'_apx_nov_'+str(j)+'_count']    =   int(x.group(1)) if x and \
+                                    not math.isnan(int(x.group(1))) else 0
+
+
     x   =   re.search(r'Plan found in iteration: (\d+)', content)
     props['iteration_index']    =   int(x.group(1)
             ) if x and not math.isnan(int(x.group(1))) else None
